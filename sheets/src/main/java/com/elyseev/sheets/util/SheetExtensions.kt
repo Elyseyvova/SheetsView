@@ -115,10 +115,10 @@ fun Context.showSheetEdit(
 
 fun Context.showSheetAlert(
     title: String?,
-    titleOk: String,
+    titleOk: String = "OK",
     message: String,
     params: Bundle? = null,
-    listenerOk: () -> Unit
+    listenerOk: () -> Unit = {}
 ) {
     val dialog = SheetsDialog(this)
 
@@ -138,12 +138,12 @@ fun Context.showSheetAlert(
 
 fun Context.showSheetDialog(
     title: String?,
-    titleOk: String,
-    titleCancel: String,
+    titleOk: String = "OK",
+    titleCancel: String = "CANCEL",
     message: String,
     params: Bundle? = null,
-    listenerOk: () -> Unit,
-    listenerCancel: () -> Unit
+    listenerOk: () -> Unit = {},
+    listenerCancel: () -> Unit = {}
 ) {
     val dialog = SheetsDialog(this)
 
