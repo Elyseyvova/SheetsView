@@ -2,6 +2,7 @@ package com.elyseev.sheets.util
 
 import android.content.Context
 import android.os.Bundle
+import android.support.design.widget.BottomSheetDialog
 import com.elyseev.sheets.*
 import com.elyseev.sheets.model.SheetItem
 import com.elyseev.sheets.model.SheetSeekUnit
@@ -92,11 +93,11 @@ fun Context.showSheetSeek(
 
 fun Context.showSheetEdit(
     title: String?,
-    titleOk: String,
+    titleOk: String = "OK",
     currentText: String?,
     hint: String?,
     listenerOk: (String) -> Unit
-) {
+): BottomSheetDialog {
     val dialog = SheetsDialog(this)
 
     val sheet = SheetEdit(this)
@@ -110,6 +111,8 @@ fun Context.showSheetEdit(
 
     dialog.setContentView(sheet)
     dialog.show()
+
+    return dialog
 }
 
 
