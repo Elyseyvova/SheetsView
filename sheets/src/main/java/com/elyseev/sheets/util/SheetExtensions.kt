@@ -118,6 +118,7 @@ fun Context.showSheetAlert(
     titleOk: String = "OK",
     message: String,
     params: Bundle? = null,
+    isCancelable: Boolean = false,
     listenerOk: () -> Unit = {}
 ) {
     val dialog = SheetsDialog(this)
@@ -132,6 +133,7 @@ fun Context.showSheetAlert(
     }
 
     dialog.setContentView(sheet)
+    dialog.setCancelable(isCancelable)
     dialog.show()
 }
 
@@ -142,6 +144,7 @@ fun Context.showSheetDialog(
     titleCancel: String = "CANCEL",
     message: String,
     params: Bundle? = null,
+    isCancelable: Boolean = false,
     listenerOk: () -> Unit = {},
     listenerCancel: () -> Unit = {}
 ) {
@@ -161,7 +164,7 @@ fun Context.showSheetDialog(
         dialog.dismiss()
     }
 
-    dialog.setCancelable(false)
+    dialog.setCancelable(isCancelable)
     dialog.setContentView(sheet)
     dialog.show()
 }
