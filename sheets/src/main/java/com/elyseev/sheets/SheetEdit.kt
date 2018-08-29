@@ -40,8 +40,8 @@ internal class SheetEdit @JvmOverloads constructor(context: Context, val attrs: 
 
     fun buttonOk(title: String = "OK", listener: (String) -> Unit) {
         onClickedOkListener = listener
-        sheetOkTop.show()
-        sheetOkTop.text = title
-        sheetOkTop.setOnClickListener { onClickedOkListener.invoke(sheetEdit.text.toString()) }
+        sheetOk.show()
+        sheetOk.text = title
+        sheetOk.setOnClickListener { onClickedOkListener.invoke(sheetEdit.text.toString()) }
     }
 }

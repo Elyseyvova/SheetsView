@@ -10,6 +10,7 @@ import com.elyseev.sheets.adapter.SheetAdapter
 import com.elyseev.sheets.adapter.SheetAdapter.SheetType.ACTIONS
 import com.elyseev.sheets.model.SheetItem
 import com.elyseev.sheets.util.inflate
+import com.elyseev.sheets.util.show
 import com.elyseev.sheets.util.showed
 import kotlinx.android.synthetic.main.sheet_view.view.*
 
@@ -50,11 +51,10 @@ internal class SheetCustomView @JvmOverloads constructor(context: Context, val a
         group.requestLayout()
     }
 
-    fun onSelectedItem(handler: (Any?) -> Unit) {
-        onSelectedListener = handler
+    fun buttonOk(title: String = "Ok", listener: () -> Unit) {
+        sheetOk.show()
+        sheetOk.text = title
+        sheetOk.setOnClickListener { listener.invoke() }
     }
 
-    fun closeSheets() {
-        onSelectedListener.invoke(null)
-    }
 }

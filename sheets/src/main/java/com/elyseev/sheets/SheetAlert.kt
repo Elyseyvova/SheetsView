@@ -8,12 +8,11 @@ import android.view.View
 import android.widget.LinearLayout
 import com.elyseev.sheets.util.SheetsView.Companion.BACKGROUND_COLOR
 import com.elyseev.sheets.util.SheetsView.Companion.CANCEL_TEXT_COLOR
-import com.elyseev.sheets.util.SheetsView.Companion.OK_TEXT_COLOR
 import com.elyseev.sheets.util.SheetsView.Companion.TITLE_COLOR
 import com.elyseev.sheets.util.hide
 import com.elyseev.sheets.util.inflate
 import com.elyseev.sheets.util.show
-import kotlinx.android.synthetic.main.sheet_alert.view.*
+import kotlinx.android.synthetic.main.sheet_message.view.*
 import kotlinx.android.synthetic.main.sheet_view.view.*
 
 internal class SheetAlert @JvmOverloads constructor(context: Context, val attrs: AttributeSet? = null, defStyleAttr: Int = 0) :
@@ -36,7 +35,6 @@ internal class SheetAlert @JvmOverloads constructor(context: Context, val attrs:
             value?.apply {
                 root.background.setColorFilter(getInt(BACKGROUND_COLOR, resources.getColor(R.color.background_color)), PorterDuff.Mode.SRC_IN)
                 sheetTitle.setTextColor(getInt(TITLE_COLOR, resources.getColor(R.color.title_color)))
-                sheetOk.setTextColor(getInt(OK_TEXT_COLOR, resources.getColor(R.color.ok_text_color)))
                 sheetCancel.setTextColor(getInt(CANCEL_TEXT_COLOR, resources.getColor(R.color.cancel_text_color)))
             }
         }
@@ -44,7 +42,7 @@ internal class SheetAlert @JvmOverloads constructor(context: Context, val attrs:
 
     init {
         inflate(R.layout.sheet_view, true)
-        group.addView(View.inflate(context, R.layout.sheet_alert, null))
+        group.addView(View.inflate(context, R.layout.sheet_message, null))
     }
 
     fun buttonOk(title: String = "Ok", listener: () -> Unit) {

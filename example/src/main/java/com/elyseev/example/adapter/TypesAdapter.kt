@@ -14,6 +14,7 @@ class TypesAdapter(val type: SheetType, private var listenerSelected: (Any) -> U
         MULTIPLE -> MultipleType.values().size
         SEEK -> SeekType.values().size
         EDIT -> EditType.values().size
+        CUSTOM -> CustomType.values().size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = TypeVH(parent, listenerSelected)
@@ -26,6 +27,7 @@ class TypesAdapter(val type: SheetType, private var listenerSelected: (Any) -> U
             MULTIPLE -> holder.bind(MultipleType.values()[position], MultipleType.values()[position].title)
             SEEK -> holder.bind(SeekType.values()[position], SeekType.values()[position].title)
             EDIT -> holder.bind(EditType.values()[position], EditType.values()[position].title)
+            CUSTOM -> holder.bind(CustomType.values()[position], CustomType.values()[position].title)
         }
     }
 }

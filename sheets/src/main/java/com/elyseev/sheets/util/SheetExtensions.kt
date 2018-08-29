@@ -3,6 +3,7 @@ package com.elyseev.sheets.util
 import android.content.Context
 import android.os.Bundle
 import android.support.design.widget.BottomSheetDialog
+import android.view.View
 import com.elyseev.sheets.*
 import com.elyseev.sheets.model.SheetItem
 import com.elyseev.sheets.model.SheetSeekUnit
@@ -172,3 +173,27 @@ fun Context.showSheetDialog(
     dialog.show()
 }
 
+
+fun Context.showSheetCustom(
+    title: String?,
+    titleOk: String = "OK",
+    titleCancel: String = "CANCEL",
+    isCancelable: Boolean = false,
+    view: View,
+    listenerOk: () -> Unit = {},
+    listenerCancel: () -> Unit = {}
+) {
+    val dialog = SheetsDialog(this)
+
+    val sheet = SheetCustomView(this)
+    sheet.title = title!!
+    sheet.setCustomView(view)
+    sheet.buttonOk(titleOk) {
+        listenerOk.invoke()
+        dialog.dismiss()
+    }
+
+    dialog.setCancelable(isCancelable)
+    dialog.setContentView(sheet)
+    dialog.show()
+}

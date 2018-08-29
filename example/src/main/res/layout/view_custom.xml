@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="200dp"
     android:background="@android:color/white"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/btnCustom1"
@@ -14,6 +14,18 @@
 
     <Button
         android:id="@+id/btnCustom2"
+        android:layout_width="match_parent"
+        android:text="Custom button 2"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+    <Button
+        android:id="@+id/btnCustom3"
+        android:layout_width="match_parent"
+        android:text="Custom button 2"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+    <Button
+        android:id="@+id/btnCustom4"
         android:layout_width="match_parent"
         android:text="Custom button 2"
         android:layout_height="match_parent"

@@ -58,8 +58,8 @@ internal class SheetSeekbar @JvmOverloads constructor(context: Context, val attr
 
     fun buttonOk(title: String = "OK", handler: (Int) -> Unit) {
         onClickedOkListener = handler
-        sheetOkTop.show()
-        sheetOkTop.text = title
-        sheetOkTop.setOnClickListener { onClickedOkListener.invoke(seek.progress + currentSeekUnit.min) }
+        sheetOk.show()
+        sheetOk.text = title
+        sheetOk.setOnClickListener { onClickedOkListener.invoke(seek.progress + currentSeekUnit.min) }
     }
 }

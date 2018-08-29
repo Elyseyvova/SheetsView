@@ -5,7 +5,7 @@ package com.elyseev.example.data
  * Created by Elyseev Vladimir on 05.06.18.
  */
 enum class SheetType {
-    ALERT, ACTIONS, SINGLE, MULTIPLE, SEEK, EDIT
+    ALERT, ACTIONS, SINGLE, MULTIPLE, SEEK, EDIT, CUSTOM
 }
 
 enum class AlertType(val title: String) {
@@ -35,4 +35,8 @@ enum class SeekType(val title: String) {
 
 enum class EditType(val title: String) {
     EDIT("Edit view")
+}
+
+enum class CustomType(val title: String) {
+    CUSTOM("Custom view")
 }

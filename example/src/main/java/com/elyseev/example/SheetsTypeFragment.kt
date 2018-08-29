@@ -74,6 +74,7 @@ class SheetsTypeFragment : Fragment() {
                 MultipleType.MULTIPLE_WITH_ICON -> showMultipleWithIconList()
                 SeekType.SEEK -> showSeek()
                 EditType.EDIT -> showEdit()
+                CustomType.CUSTOM -> showCustom()
             }
         }
     }
@@ -154,6 +155,11 @@ class SheetsTypeFragment : Fragment() {
     private fun showAlertCustomColors() {
         val params = bundleOf(SheetsView.TITLE_COLOR to Color.RED, SheetsView.OK_TEXT_COLOR to Color.GREEN)
         ctx.showSheetAlert("Custom colors", "OK", "Current long long long  long long long  long long long  long long long message", params) { }
+    }
+
+    private fun showCustom() {
+        val view = View.inflate(ctx, R.layout.view_custom, null)
+        ctx.showSheetCustom("Custom view", "OK", "Cancel", false, view, {}, {})
     }
 
 }
