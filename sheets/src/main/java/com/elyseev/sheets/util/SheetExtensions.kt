@@ -10,8 +10,8 @@ fun Context.showSheetAction(
     title: String,
     items: List<SheetItem>,
     params: Bundle? = null,
-    cancelable: Boolean = true,
-    listener: (Int) -> Unit
+    isCancelable: Boolean = true,
+    listenerSelectable: (Int) -> Unit
 ) {
     val dialog = SheetsDialog(this)
 
@@ -20,11 +20,11 @@ fun Context.showSheetAction(
     sheet.title = title
     sheet.items = items
     sheet.onSelectedItem {
-        listener.invoke(it)
+        listenerSelectable.invoke(it)
         dialog.dismiss()
     }
 
-    dialog.setCancelable(cancelable)
+    dialog.setCancelable(isCancelable)
     dialog.setContentView(sheet)
     dialog.show()
 }
@@ -32,8 +32,8 @@ fun Context.showSheetAction(
 fun Context.showSheetSingle(
     title: String,
     items: List<SheetItem>,
-    cancelable: Boolean = true,
-    listener: (Int) -> Unit)
+    isCancelable: Boolean = true,
+    listenerSelectable: (Int) -> Unit)
 {
     val dialog = SheetsDialog(this)
 
@@ -41,20 +41,20 @@ fun Context.showSheetSingle(
     sheet.title = title
     sheet.items = items
     sheet.onSelectedItem {
-        listener.invoke(it)
+        listenerSelectable.invoke(it)
         dialog.dismiss()
     }
 
-    dialog.setCancelable(cancelable)
+    dialog.setCancelable(isCancelable)
     dialog.setContentView(sheet)
     dialog.show()
 }
 
 fun Context.showSheetMultiple(
     title: String,
-    titleOk: String,
+    titleOk: String = "OK",
     items: List<SheetItem>,
-    listener: (List<SheetItem>) -> Unit
+    listenerSelectable: (List<SheetItem>) -> Unit
 ) {
     val dialog = SheetsDialog(this)
 
@@ -62,7 +62,7 @@ fun Context.showSheetMultiple(
     sheet.title = title
     sheet.items = items
     sheet.buttonOk(titleOk) {
-        listener.invoke(items)
+        listenerSelectable.invoke(items)
         dialog.dismiss()
     }
 
@@ -74,7 +74,7 @@ fun Context.showSheetSeek(
     title: String,
     titleOk: String,
     seekUnit: SheetSeekUnit,
-    listener: (Int) -> Unit
+    listenerSeekable: (Int) -> Unit
 ) {
     val dialog = SheetsDialog(this)
 
@@ -82,7 +82,7 @@ fun Context.showSheetSeek(
     sheet.title = title
     sheet.currentSeekUnit = seekUnit
     sheet.buttonOk(titleOk) {
-        listener.invoke(it)
+        listenerSeekable.invoke(it)
         dialog.dismiss()
     }
 
@@ -95,7 +95,7 @@ fun Context.showSheetEdit(
     titleOk: String,
     currentText: String?,
     hint: String?,
-    listener: (String) -> Unit
+    listenerOk: (String) -> Unit
 ) {
     val dialog = SheetsDialog(this)
 
@@ -104,7 +104,7 @@ fun Context.showSheetEdit(
     sheet.hint = hint
     sheet.currentText = currentText
     sheet.buttonOk(titleOk) {
-        listener.invoke(it)
+        listenerOk.invoke(it)
         dialog.dismiss()
     }
 
