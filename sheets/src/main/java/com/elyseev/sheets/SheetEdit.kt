@@ -22,13 +22,13 @@ internal class SheetEdit @JvmOverloads constructor(context: Context, val attrs: 
 
     var currentText: String? = ""
         set(value) {
-            sheetEdit.setText(field)
-            sheetEdit.setSelection(field?.length ?: 0)
+            sheetEdit.setText(value)
+            sheetEdit.setSelection(value?.length ?: 0)
         }
 
     var hint: String? = ""
         set(value) {
-            sheetEdit.hint = hint
+            sheetEdit.hint = value
         }
 
     private var onClickedOkListener: (String) -> Unit = {}
