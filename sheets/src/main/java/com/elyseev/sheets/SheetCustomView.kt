@@ -57,7 +57,9 @@ internal class SheetCustomView @JvmOverloads constructor(context: Context, val a
         sheetOk.setOnClickListener { listener.invoke() }
     }
 
-    fun buttonCancel(title: String = "Cancek", listener: () -> Unit) {
+    fun buttonCancel(title: String, listener: () -> Unit) {
+        if (title.isEmpty()) return
+
         sheetCancel.show()
         sheetCancel.text = title
         sheetCancel.setOnClickListener { listener.invoke() }
