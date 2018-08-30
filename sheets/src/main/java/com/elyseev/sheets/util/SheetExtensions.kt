@@ -179,10 +179,11 @@ fun Context.showSheetCustom(
     titleOk: String = "OK",
     titleCancel: String = "CANCEL",
     isCancelable: Boolean = false,
+    isAutoDismiss: Boolean = false,
     view: View,
     listenerOk: () -> Unit = {},
     listenerCancel: () -> Unit = {}
-) {
+): BottomSheetDialog {
     val dialog = SheetsDialog(this)
 
     val sheet = SheetCustomView(this)
@@ -190,10 +191,17 @@ fun Context.showSheetCustom(
     sheet.setCustomView(view)
     sheet.buttonOk(titleOk) {
         listenerOk.invoke()
-        dialog.dismiss()
+        if (isAutoDismiss) dialog.dismiss()
+    }
+
+    sheet.buttonCancel(titleCancel) {
+        listenerCancel.invoke()
+        if (isAutoDismiss) dialog.dismiss()
     }
 
     dialog.setCancelable(isCancelable)
     dialog.setContentView(sheet)
     dialog.show()
+
+    return dialog
 }
