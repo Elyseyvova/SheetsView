@@ -53,7 +53,6 @@ fun Context.showSheetSingle(
 fun Context.showSheetMultiple(
     title: String,
     titleOk: String = "OK",
-    titleCancel: String = "CANCEL",
     items: List<SheetItem>,
     listenerSelectable: (List<SheetItem>) -> Unit
 ) {

@@ -116,7 +116,7 @@ class SheetsTypeFragment : Fragment() {
         items[7].isSelected = true
         items[8].isSelected = true
 
-//        ctx.showSheetMultiple("Multiple list", "OK", items) { toast("Selected ${it.filter { it.isSelected }.size} items") }
+        ctx.showSheetMultiple("Multiple list", "OK", items) { toast("Selected ${it.filter { it.isSelected }.size} items") }
     }
 
     private fun showMultipleWithIconList() {

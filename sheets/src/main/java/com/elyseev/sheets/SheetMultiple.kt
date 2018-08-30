@@ -8,8 +8,7 @@ import com.elyseev.sheets.model.SheetItem
 import com.elyseev.sheets.util.inflate
 import com.elyseev.sheets.util.show
 import com.elyseev.sheets.util.showed
-import kotlinx.android.synthetic.main.sheet_list.view.*
-import kotlinx.android.synthetic.main.sheet_view.view.*
+import kotlinx.android.synthetic.main.sheet_items.view.*
 
 internal class SheetMultiple @JvmOverloads constructor(context: Context, val attrs: AttributeSet? = null, defStyleAttr: Int = 0) :
     LinearLayout(context, attrs, defStyleAttr) {
@@ -25,7 +24,7 @@ internal class SheetMultiple @JvmOverloads constructor(context: Context, val att
         set(value) {
             field = value
 
-            sheetOk.showed(items.size > 5)
+            sheetAction.showed(items.size > 5)
 
             SheetAdapter(SheetAdapter.SheetType.MULTIPLE).apply {
                 list.adapter = this
@@ -43,11 +42,11 @@ internal class SheetMultiple @JvmOverloads constructor(context: Context, val att
     }
 
     fun buttonOk(title: String = "OK", handler: (List<Any>) -> Unit) {
-        sheetOk.show()
-        sheetOk.text = title
+        sheetAction.show()
+        sheetAction.text = title
 
         onClickOkListener = handler
 
-        sheetOk.setOnClickListener { onClickOkListener.invoke(items) }
+        sheetAction.setOnClickListener { onClickOkListener.invoke(items) }
     }
 }
