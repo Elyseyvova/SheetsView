@@ -177,7 +177,7 @@ fun Context.showSheetDialog(
 fun Context.showSheetCustom(
     title: String?,
     titleOk: String = "OK",
-    titleCancel: String,
+    titleCancel: String = "",
     isCancelable: Boolean = false,
     isAutoDismiss: Boolean = false,
     view: View,
