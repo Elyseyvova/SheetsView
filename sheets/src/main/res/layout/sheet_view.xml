@@ -52,7 +52,7 @@
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
                     android:textSize="16sp"
-                    android:visibility="visible"/>
+                    android:visibility="gone"/>
 
                 <Button
                     android:id="@+id/sheetOk"
@@ -65,7 +65,7 @@
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
                     android:textSize="16sp"
-                    android:visibility="visible"/>
+                    android:visibility="gone"/>
 
             </LinearLayout>
 

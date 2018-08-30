@@ -51,7 +51,7 @@ internal class SheetCustomView @JvmOverloads constructor(context: Context, val a
         group.requestLayout()
     }
 
-    fun buttonOk(title: String = "Ok", listener: () -> Unit) {
+    fun buttonOk(title: String, listener: () -> Unit) {
         sheetOk.show()
         sheetOk.text = title
         sheetOk.setOnClickListener { listener.invoke() }

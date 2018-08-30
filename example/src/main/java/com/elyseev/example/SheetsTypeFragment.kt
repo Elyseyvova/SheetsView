@@ -159,7 +159,7 @@ class SheetsTypeFragment : Fragment() {
 
     private fun showCustom() {
         val view = View.inflate(ctx, R.layout.view_custom, null)
-        ctx.showSheetCustom("Custom view", "OK", "Cancel", false, view, {}, {})
+        ctx.showSheetCustom("Custom view", "OK", "Cancel", false, false, view, {}, {})
     }
 
 }
