@@ -8,10 +8,9 @@ import com.elyseev.sheets.*
 import com.elyseev.sheets.model.SheetItem
 import com.elyseev.sheets.model.SheetSeekUnit
 
-
-
 fun Context.showSheetAction(
     title: String,
+    titleCancel: String = "CANCEL",
     items: List<SheetItem>,
     params: Bundle? = null,
     isCancelable: Boolean = true,
@@ -23,10 +22,8 @@ fun Context.showSheetAction(
     sheet.params = params
     sheet.title = title
     sheet.items = items
-    sheet.onSelectedItem {
-        listenerSelectable.invoke(it)
-        dialog.dismiss()
-    }
+    sheet.onSelectedItem { listenerSelectable.invoke(it); dialog.dismiss() }
+    sheet.buttonAction(titleCancel) { dialog.dismiss() }
 
     dialog.setCancelable(isCancelable)
     dialog.setContentView(sheet)
@@ -35,19 +32,18 @@ fun Context.showSheetAction(
 
 fun Context.showSheetSingle(
     title: String,
+    titleCancel: String = "CANCEL",
     items: List<SheetItem>,
     isCancelable: Boolean = true,
-    listenerSelectable: (Int) -> Unit)
-{
+    listenerSelectable: (Int) -> Unit
+) {
     val dialog = SheetsDialog(this)
 
     val sheet = SheetSingle(this)
     sheet.title = title
     sheet.items = items
-    sheet.onSelectedItem {
-        listenerSelectable.invoke(it)
-        dialog.dismiss()
-    }
+    sheet.onSelectedItem { listenerSelectable.invoke(it); dialog.dismiss() }
+    sheet.buttonAction(titleCancel) { dialog.dismiss() }
 
     dialog.setCancelable(isCancelable)
     dialog.setContentView(sheet)
@@ -57,6 +53,7 @@ fun Context.showSheetSingle(
 fun Context.showSheetMultiple(
     title: String,
     titleOk: String = "OK",
+    titleCancel: String = "CANCEL",
     items: List<SheetItem>,
     listenerSelectable: (List<SheetItem>) -> Unit
 ) {
@@ -65,10 +62,7 @@ fun Context.showSheetMultiple(
     val sheet = SheetMultiple(this)
     sheet.title = title
     sheet.items = items
-    sheet.buttonOk(titleOk) {
-        listenerSelectable.invoke(items)
-        dialog.dismiss()
-    }
+    sheet.buttonOk(titleOk) { listenerSelectable.invoke(items); dialog.dismiss() }
 
     dialog.setContentView(sheet)
     dialog.show()

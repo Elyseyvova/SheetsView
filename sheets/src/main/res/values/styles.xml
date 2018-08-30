@@ -10,7 +10,7 @@
 
     <style name="BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
         <item name="android:background">@drawable/bg</item>
-        <item name="behavior_peekHeight">1000dp</item>
+        <item name="behavior_peekHeight">300dp</item>
     </style>
 
 </resources>

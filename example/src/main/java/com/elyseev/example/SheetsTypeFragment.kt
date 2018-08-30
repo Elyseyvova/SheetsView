@@ -81,32 +81,32 @@ class SheetsTypeFragment : Fragment() {
 
     private fun showActionsList() {
         val items = (0..50).map { SheetItem(it, null, "Action $it") }
-        ctx.showSheetAction("Action list", items) { toast(items[it].title) }
+//        ctx.showSheetAction("Action list", items) { toast(items[it].title) }
     }
 
     private fun showActionsWithIconList() {
         val items = (0..50).map { SheetItem(it, randomIcon, "Action with icon $it") }
-        ctx.showSheetAction("Action with icon list", items) { toast(items[it].title) }
+//        ctx.showSheetAction("Action with icon list", items) { toast(items[it].title) }
     }
 
     private fun showActionsCustomsColors() {
         val params = bundleOf(SheetsView.TITLE_COLOR to Color.RED, SheetsView.ACTION_TEXT_COLOR to Color.GREEN)
         val items = (0..50).map { SheetItem(it, null, "Action $it") }
-        ctx.showSheetAction("Action list", items, params) { toast(items[it].title) }
+//        ctx.showSheetAction("Action list", items, params) { toast(items[it].title) }
     }
 
     private fun showSingleList() {
         val items = (0..50).map { SheetItem(it, null, "Single $it") }
         items[2].isSelected = true
 
-        ctx.showSheetSingle("Single list", items) { toast(items[it].title) }
+//        ctx.showSheetSingle("Single list", items) { toast(items[it].title) }
     }
 
     private fun showSingleWithIconList() {
         val items = (0..50).map { SheetItem(it, randomIcon, "Single with icon $it") }
         items[2].isSelected = true
 
-        ctx.showSheetSingle("Single with icon list", items) { toast(items[it].title) }
+//        ctx.showSheetSingle("Single with icon list", items) { toast(items[it].title) }
     }
 
     private fun showMultipleList() {
@@ -116,7 +116,7 @@ class SheetsTypeFragment : Fragment() {
         items[7].isSelected = true
         items[8].isSelected = true
 
-        ctx.showSheetMultiple("Multiple list", "OK", items) { toast("Selected ${it.filter { it.isSelected }.size} items") }
+//        ctx.showSheetMultiple("Multiple list", "OK", items) { toast("Selected ${it.filter { it.isSelected }.size} items") }
     }
 
     private fun showMultipleWithIconList() {
@@ -126,7 +126,7 @@ class SheetsTypeFragment : Fragment() {
         items[7].isSelected = true
         items[8].isSelected = true
 
-        ctx.showSheetMultiple("Multiple with icon list", "OK", items) { toast("Selected ${it.filter { it.isSelected }.size} items") }
+//        ctx.showSheetMultiple("Multiple with icon list", "OK", items) { toast("Selected ${it.filter { it.isSelected }.size} items") }
     }
 
     private fun showSeek() {
@@ -159,7 +159,7 @@ class SheetsTypeFragment : Fragment() {
 
     private fun showCustom() {
         val view = View.inflate(ctx, R.layout.view_custom, null)
-        ctx.showSheetCustom("Custom view", "OK", "Cancel", true, false, view, {}, {})
+//        ctx.showSheetCustom("Custom view", "OK", "Cancel", false, view)
     }
 
 }

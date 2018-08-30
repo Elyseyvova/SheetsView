@@ -45,4 +45,10 @@ internal class SheetSingle @JvmOverloads constructor(context: Context, val attrs
     fun onSelectedItem(handler: (Int) -> Unit) {
         onSelectedListener = handler
     }
+
+    fun buttonAction(title: String = "OK", listener: () -> Unit) {
+        sheetAction.show()
+        sheetAction.text = title
+        sheetAction.setOnClickListener { listener.invoke() }
+    }
 }
