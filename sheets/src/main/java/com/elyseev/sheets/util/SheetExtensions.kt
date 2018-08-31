@@ -92,6 +92,7 @@ fun Context.showSheetEdit(
     titleOk: String = "OK",
     currentText: String?,
     hint: String?,
+    isAutoDismiss: Boolean = false,
     listenerOk: (String) -> Unit
 ): BottomSheetDialog {
     val dialog = SheetsDialog(this)
@@ -102,7 +103,7 @@ fun Context.showSheetEdit(
     sheet.currentText = currentText
     sheet.buttonOk(titleOk) {
         listenerOk.invoke(it)
-        dialog.dismiss()
+        if (isAutoDismiss) dialog.dismiss()
     }
 
     dialog.setContentView(sheet)
