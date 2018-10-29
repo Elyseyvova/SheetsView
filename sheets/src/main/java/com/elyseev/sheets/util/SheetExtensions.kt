@@ -2,19 +2,19 @@ package com.elyseev.sheets.util
 
 import android.content.Context
 import android.os.Bundle
-import android.support.design.widget.BottomSheetDialog
 import android.view.View
 import com.elyseev.sheets.*
 import com.elyseev.sheets.model.SheetItem
 import com.elyseev.sheets.model.SheetSeekUnit
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 fun Context.showSheetAction(
-    title: String,
-    titleCancel: String = "CANCEL",
-    items: List<SheetItem>,
-    params: Bundle? = null,
-    isCancelable: Boolean = true,
-    listenerSelectable: (Int) -> Unit
+        title: String,
+        titleCancel: String = "CANCEL",
+        items: List<SheetItem>,
+        params: Bundle? = null,
+        isCancelable: Boolean = true,
+        listenerSelectable: (Int) -> Unit
 ) {
     val dialog = SheetsDialog(this)
 
@@ -31,11 +31,11 @@ fun Context.showSheetAction(
 }
 
 fun Context.showSheetSingle(
-    title: String,
-    titleCancel: String = "CANCEL",
-    items: List<SheetItem>,
-    isCancelable: Boolean = true,
-    listenerSelectable: (Int) -> Unit
+        title: String,
+        titleCancel: String = "CANCEL",
+        items: List<SheetItem>,
+        isCancelable: Boolean = true,
+        listenerSelectable: (Int) -> Unit
 ) {
     val dialog = SheetsDialog(this)
 
@@ -51,10 +51,10 @@ fun Context.showSheetSingle(
 }
 
 fun Context.showSheetMultiple(
-    title: String,
-    titleOk: String = "OK",
-    items: List<SheetItem>,
-    listenerSelectable: (List<SheetItem>) -> Unit
+        title: String,
+        titleOk: String = "OK",
+        items: List<SheetItem>,
+        listenerSelectable: (List<SheetItem>) -> Unit
 ) {
     val dialog = SheetsDialog(this)
 
@@ -68,10 +68,10 @@ fun Context.showSheetMultiple(
 }
 
 fun Context.showSheetSeek(
-    title: String,
-    titleOk: String,
-    seekUnit: SheetSeekUnit,
-    listenerSeekable: (Int) -> Unit
+        title: String,
+        titleOk: String,
+        seekUnit: SheetSeekUnit,
+        listenerSeekable: (Int) -> Unit
 ) {
     val dialog = SheetsDialog(this)
 
@@ -88,12 +88,12 @@ fun Context.showSheetSeek(
 }
 
 fun Context.showSheetEdit(
-    title: String?,
-    titleOk: String = "OK",
-    currentText: String?,
-    hint: String?,
-    isAutoDismiss: Boolean = false,
-    listenerOk: (String) -> Unit
+        title: String?,
+        titleOk: String = "OK",
+        currentText: String?,
+        hint: String?,
+        isAutoDismiss: Boolean = false,
+        listenerOk: (String) -> Unit
 ): BottomSheetDialog {
     val dialog = SheetsDialog(this)
 
@@ -114,12 +114,12 @@ fun Context.showSheetEdit(
 
 
 fun Context.showSheetAlert(
-    title: String?,
-    titleOk: String = "OK",
-    message: String,
-    params: Bundle? = null,
-    isCancelable: Boolean = false,
-    listenerOk: () -> Unit = {}
+        title: String?,
+        titleOk: String = "OK",
+        message: String,
+        params: Bundle? = null,
+        isCancelable: Boolean = false,
+        listenerOk: () -> Unit = {}
 ) {
     val dialog = SheetsDialog(this)
 
@@ -139,14 +139,14 @@ fun Context.showSheetAlert(
 
 
 fun Context.showSheetDialog(
-    title: String?,
-    titleOk: String = "OK",
-    titleCancel: String = "CANCEL",
-    message: String,
-    params: Bundle? = null,
-    isCancelable: Boolean = false,
-    listenerOk: () -> Unit = {},
-    listenerCancel: () -> Unit = {}
+        title: String?,
+        titleOk: String = "OK",
+        titleCancel: String = "CANCEL",
+        message: String,
+        params: Bundle? = null,
+        isCancelable: Boolean = false,
+        listenerOk: () -> Unit = {},
+        listenerCancel: () -> Unit = {}
 ) {
     val dialog = SheetsDialog(this)
 
@@ -171,14 +171,14 @@ fun Context.showSheetDialog(
 
 
 fun Context.showSheetCustom(
-    title: String?,
-    titleOk: String = "OK",
-    titleCancel: String = "",
-    isCancelable: Boolean = false,
-    isAutoDismiss: Boolean = false,
-    view: View,
-    listenerOk: () -> Unit = {},
-    listenerCancel: () -> Unit = {}
+        title: String?,
+        titleOk: String = "OK",
+        titleCancel: String = "",
+        isCancelable: Boolean = false,
+        isAutoDismiss: Boolean = false,
+        view: View,
+        listenerOk: () -> Unit = {},
+        listenerCancel: () -> Unit = {}
 ): BottomSheetDialog {
     val dialog = SheetsDialog(this)
 

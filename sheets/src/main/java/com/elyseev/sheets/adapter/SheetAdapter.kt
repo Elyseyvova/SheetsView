@@ -1,8 +1,8 @@
 package com.elyseev.sheets.adapter
 
 import android.graphics.Color
-import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.elyseev.sheets.adapter.SheetAdapter.SheetType.*
 import com.elyseev.sheets.adapter.holder.SheetActionVH
 import com.elyseev.sheets.adapter.holder.SheetMultipleVH
