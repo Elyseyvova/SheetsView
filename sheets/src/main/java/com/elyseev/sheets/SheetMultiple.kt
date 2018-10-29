@@ -3,6 +3,8 @@ package com.elyseev.sheets
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.LinearLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.elyseev.sheets.adapter.SheetAdapter
 import com.elyseev.sheets.model.SheetItem
 import com.elyseev.sheets.util.inflate
@@ -28,6 +30,7 @@ internal class SheetMultiple @JvmOverloads constructor(context: Context, val att
 
             SheetAdapter(SheetAdapter.SheetType.MULTIPLE).apply {
                 list.adapter = this
+                list.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
                 sheetItems = items
                 onSelectedItem { selectedItem ->
                     items.first { it.id == selectedItem.id }.isSelected = selectedItem.isSelected

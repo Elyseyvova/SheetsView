@@ -5,6 +5,8 @@ import android.graphics.Color
 import android.os.Bundle
 import android.util.AttributeSet
 import android.widget.LinearLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.elyseev.sheets.adapter.SheetAdapter
 import com.elyseev.sheets.adapter.SheetAdapter.SheetType.ACTIONS
 import com.elyseev.sheets.model.SheetItem
@@ -31,6 +33,7 @@ internal class SheetAction @JvmOverloads constructor(context: Context, val attrs
 
             SheetAdapter(ACTIONS, params?.getInt(ACTION_TEXT_COLOR, resources.getColor(R.color.action_text_color)) ?: Color.BLACK).apply {
                 list.adapter = this
+                list.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
                 sheetItems = items
                 onSelectedItem { onSelectedListener.invoke(it.id) }
             }

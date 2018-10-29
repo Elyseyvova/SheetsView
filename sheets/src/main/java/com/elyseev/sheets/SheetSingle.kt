@@ -4,6 +4,8 @@ import android.content.Context
 import android.graphics.Color
 import android.util.AttributeSet
 import android.widget.LinearLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.elyseev.sheets.adapter.SheetAdapter
 import com.elyseev.sheets.adapter.SheetAdapter.SheetType.SINGLE
 import com.elyseev.sheets.model.SheetItem
@@ -28,6 +30,7 @@ internal class SheetSingle @JvmOverloads constructor(context: Context, val attrs
 
             SheetAdapter(SINGLE, color).apply {
                 list.adapter = this
+                list.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
                 sheetItems = items
 
                 onSelectedItem { onSelectedListener.invoke(it.id) }
