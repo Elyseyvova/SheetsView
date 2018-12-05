@@ -41,7 +41,7 @@
                 android:gravity="right"
                 android:orientation="horizontal">
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/sheetCancel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
                     android:textSize="16sp"
                     android:visibility="gone"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/sheetOk"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

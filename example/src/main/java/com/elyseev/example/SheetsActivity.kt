@@ -1,7 +1,7 @@
 package com.elyseev.example
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.elyseev.example.adapter.PagerAdapter
 import kotlinx.android.synthetic.main.activity_sheets.*
 

@@ -5,65 +5,65 @@
     android:background="@android:color/white"
     android:orientation="vertical">
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCustom1"
         android:layout_width="match_parent"
         android:text="Custom button 1"
         android:layout_height="match_parent"
         android:layout_weight="1"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCustom2"
         android:layout_width="match_parent"
         android:text="Custom button 2"
         android:layout_height="match_parent"
         android:layout_weight="1"/>
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCustom3"
         android:layout_width="match_parent"
         android:text="Custom button 2"
         android:layout_height="match_parent"
         android:layout_weight="1"/>
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCustom4"
         android:layout_width="match_parent"
         android:text="Custom button 2"
         android:layout_height="match_parent"
         android:layout_weight="1"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCustom5"
         android:layout_width="match_parent"
         android:text="Custom button 2"
         android:layout_height="match_parent"
         android:layout_weight="1"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:text="Custom button 2"
         android:layout_height="match_parent"
         android:layout_weight="1"/>
- <Button
+ <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:text="Custom button 2"
         android:layout_height="match_parent"
         android:layout_weight="1"/>
- <Button
+ <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:text="Custom button 2"
         android:layout_height="match_parent"
         android:layout_weight="1"/>
- <Button
+ <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:text="Custom button 2"
         android:layout_height="match_parent"
         android:layout_weight="1"/>
- <Button
+ <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:text="Custom button 2"
         android:layout_height="match_parent"
         android:layout_weight="1"/>
- <Button
+ <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:text="Custom button 2"
         android:layout_height="match_parent"

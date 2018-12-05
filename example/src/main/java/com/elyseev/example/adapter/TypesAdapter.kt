@@ -1,7 +1,7 @@
 package com.elyseev.example.adapter
 
-import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.elyseev.example.data.*
 import com.elyseev.example.data.SheetType.*
 

@@ -4,7 +4,7 @@ buildscript {
     ext {
         kotlin_version = '1.2.71'
         koin_version = '0.9.1'
-        anko_version = "0.10.2"
+        anko_version = "0.10.8"
         glide_version = '4.3.1'
         google_version = '11.8.0'
         moxy_version = '1.5.3'

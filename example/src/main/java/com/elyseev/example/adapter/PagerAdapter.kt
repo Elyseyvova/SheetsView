@@ -1,7 +1,7 @@
 package com.elyseev.example.adapter
 
-import android.support.v4.app.FragmentStatePagerAdapter
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentStatePagerAdapter
 import com.elyseev.example.SheetsTypeFragment
 import com.elyseev.example.data.SheetType
 

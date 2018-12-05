@@ -23,7 +23,7 @@
             android:textColor="@color/title_color"
             android:textSize="18sp" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/sheetAction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

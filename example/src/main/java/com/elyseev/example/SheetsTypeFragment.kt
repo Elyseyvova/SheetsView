@@ -2,12 +2,13 @@ package com.elyseev.example
 
 import android.graphics.Color
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.RecyclerView.VERTICAL
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.RecyclerView
+import com.elyseev.example.R.id.rv
 import com.elyseev.example.adapter.TypesAdapter
 import com.elyseev.example.data.*
 import com.elyseev.sheets.model.SheetItem
@@ -59,7 +60,7 @@ class SheetsTypeFragment : Fragment() {
     private fun setupUI() {
         val type = arguments?.getSerializable("type") as SheetType
 
-        rv.addItemDecoration(DividerItemDecoration(ctx, VERTICAL))
+        rv.addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
         rv.adapter = TypesAdapter(type) { type ->
             when (type) {
                 AlertType.ALERT -> showAlert()
