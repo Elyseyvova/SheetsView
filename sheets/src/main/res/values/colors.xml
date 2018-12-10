@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="background_color">#fff</color>
-    <color name="title_color">#89000000</color>
-    <color name="ok_text_color">#000</color>
-    <color name="cancel_text_color">#000</color>
-    <color name="action_text_color">#000</color>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="background_color" tools:override="true">#fff</color>
+    <color name="title_color" tools:override="true">#89000000</color>
+    <color name="ok_text_color" tools:override="true">#000</color>
+    <color name="cancel_text_color" tools:override="true">#000</color>
+    <color name="action_text_color" tools:override="true">#000</color>
 </resources>
