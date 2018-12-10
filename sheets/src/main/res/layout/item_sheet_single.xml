@@ -24,7 +24,7 @@
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="16dp"
         android:layout_weight="1"
-        android:textColor="@color/action_color"
+        android:textColor="@color/item_color"
         android:textSize="16sp"
         tools:text="Preview"/>
 

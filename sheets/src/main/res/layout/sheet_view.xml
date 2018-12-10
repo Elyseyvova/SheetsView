@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -26,13 +25,13 @@
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
                 android:textColor="@color/title_color"
-                android:textSize="18sp"/>
+                android:textSize="18sp" />
 
             <LinearLayout
                 android:id="@+id/group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"/>
+                android:orientation="vertical" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -51,8 +50,9 @@
                     android:gravity="center"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
+                    android:textColor="@color/action_color"
                     android:textSize="16sp"
-                    android:visibility="gone"/>
+                    android:visibility="gone" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/sheetOk"
@@ -64,8 +64,9 @@
                     android:gravity="center"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
+                    android:textColor="@color/action_color"
                     android:textSize="16sp"
-                    android:visibility="gone"/>
+                    android:visibility="gone" />
 
             </LinearLayout>
 

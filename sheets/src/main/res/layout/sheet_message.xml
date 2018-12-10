@@ -10,6 +10,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/sheetText"
         android:layout_width="match_parent"
+        android:textColor="@color/message_color"
         android:layout_height="match_parent"/>
 
 </LinearLayout>
