@@ -112,6 +112,31 @@ fun Context.showSheetEdit(
     return dialog
 }
 
+fun Context.showSheetPhoneEdit(
+        title: String?,
+        titleOk: String = "OK",
+        currentText: String?,
+        hint: String?,
+        isAutoDismiss: Boolean = false,
+        listenerOk: (String) -> Unit
+): BottomSheetDialog {
+    val dialog = SheetsDialog(this)
+
+    val sheet = SheetPhoneEdit(this)
+    sheet.title = title
+    sheet.hint = hint
+    sheet.currentText = currentText
+    sheet.buttonOk(titleOk) {
+        listenerOk.invoke(it)
+        if (isAutoDismiss) dialog.dismiss()
+    }
+
+    dialog.setContentView(sheet)
+    dialog.show()
+
+    return dialog
+}
+
 
 fun Context.showSheetAlert(
         title: String?,

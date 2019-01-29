@@ -3,6 +3,8 @@ package com.elyseev.sheets.util
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import com.redmadrobot.inputmask.MaskedTextChangedListener
 
 /**
  * Created by Elyseev Vladimir on 10.04.18.
@@ -47,4 +49,9 @@ fun View.show(isEnabled: Boolean = true) {
 
 fun View.showed(isShowed: Boolean = true) {
     if (isShowed) show() else hide()
+}
+
+fun EditText.addMaskPhone() {
+    addTextChangedListener(MaskedTextChangedListener("+{7} ([000]) [000]-[00]-[00]", true, this, null, null))
+    setSelection(text.length)
 }
