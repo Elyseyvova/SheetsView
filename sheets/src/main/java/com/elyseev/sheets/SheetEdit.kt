@@ -33,6 +33,9 @@ internal class SheetEdit @JvmOverloads constructor(context: Context, val attrs: 
         }
 
     var mask: String? = null
+        set(value) {
+            if (value != null) sheetEdit.addMask(value)
+        }
 
 
     private var onClickedOkListener: (String) -> Unit = {}
@@ -40,7 +43,6 @@ internal class SheetEdit @JvmOverloads constructor(context: Context, val attrs: 
     init {
         inflate(R.layout.sheet_view, true)
         group.addView(View.inflate(context, R.layout.sheet_edit, null))
-        sheetEdit?.takeIf { mask != null }?.addMask(mask!!)
     }
 
     fun buttonOk(title: String = "OK", listener: (String) -> Unit) {
