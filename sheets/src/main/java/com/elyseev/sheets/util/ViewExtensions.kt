@@ -51,7 +51,12 @@ fun View.showed(isShowed: Boolean = true) {
     if (isShowed) show() else hide()
 }
 
-fun EditText.addMaskPhone() {
-    addTextChangedListener(MaskedTextChangedListener("+{7} ([000]) [000]-[00]-[00]", true, this, null, null))
+fun EditText.addMask(mask: String) {
+    addTextChangedListener(MaskedTextChangedListener(mask, true, this, null, null))
     setSelection(text.length)
+}
+
+fun EditText.addMaskPhone() {
+	addTextChangedListener(MaskedTextChangedListener("+{7} ([000]) [000]-[00]-[00]", true, this, null, null))
+	setSelection(text.length)
 }

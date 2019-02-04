@@ -90,6 +90,7 @@ fun Context.showSheetSeek(
 fun Context.showSheetEdit(
         title: String?,
         titleOk: String = "OK",
+        mask: String?,
         currentText: String?,
         hint: String?,
         isAutoDismiss: Boolean = false,
@@ -99,6 +100,7 @@ fun Context.showSheetEdit(
 
     val sheet = SheetEdit(this)
     sheet.title = title
+    sheet.mask = mask
     sheet.hint = hint
     sheet.currentText = currentText
     sheet.buttonOk(titleOk) {

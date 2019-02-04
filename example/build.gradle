@@ -30,7 +30,7 @@ dependencies {
     implementation kotlin_.anko
     implementation kotlin_.anko_commons
     implementation kotlin_.anko_design
-    implementation 'com.redmadrobot:inputmask:2.3.0'
+    implementation 'com.redmadrobot:inputmask:4.0.0'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation project(':sheets')

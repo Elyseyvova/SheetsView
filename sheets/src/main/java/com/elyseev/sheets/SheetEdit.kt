@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import android.widget.LinearLayout
+import com.elyseev.sheets.util.addMask
 import com.elyseev.sheets.util.inflate
 import com.elyseev.sheets.util.show
 import com.elyseev.sheets.util.showed
@@ -31,11 +32,15 @@ internal class SheetEdit @JvmOverloads constructor(context: Context, val attrs: 
             sheetEdit.hint = value
         }
 
+    var mask: String? = null
+
+
     private var onClickedOkListener: (String) -> Unit = {}
 
     init {
         inflate(R.layout.sheet_view, true)
         group.addView(View.inflate(context, R.layout.sheet_edit, null))
+        sheetEdit?.takeIf { mask != null }?.addMask(mask!!)
     }
 
     fun buttonOk(title: String = "OK", listener: (String) -> Unit) {
