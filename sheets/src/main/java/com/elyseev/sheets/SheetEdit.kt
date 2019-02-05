@@ -45,6 +45,7 @@ internal class SheetEdit @JvmOverloads constructor(context: Context, val attrs: 
         group.addView(View.inflate(context, R.layout.sheet_edit, null))
     }
 
+
     fun buttonOk(title: String = "OK", listener: (String) -> Unit) {
         onClickedOkListener = listener
         sheetOk.show()

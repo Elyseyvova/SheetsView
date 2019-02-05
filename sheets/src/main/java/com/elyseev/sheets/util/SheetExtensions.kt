@@ -3,6 +3,7 @@ package com.elyseev.sheets.util
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import com.elyseev.sheets.*
 import com.elyseev.sheets.model.SheetItem
 import com.elyseev.sheets.model.SheetSeekUnit
@@ -97,6 +98,8 @@ fun Context.showSheetEdit(
         listenerOk: (String) -> Unit
 ): BottomSheetDialog {
     val dialog = SheetsDialog(this)
+    dialog.window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
+
 
     val sheet = SheetEdit(this)
     sheet.title = title

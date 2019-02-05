@@ -136,7 +136,7 @@ class SheetsTypeFragment : Fragment() {
     }
 
     private fun showEdit() {
-        ctx.showSheetEdit("Edit title", "OK", "Current text", "Your hint...") { toast("Current text: $it") }
+        ctx.showSheetEdit("Edit title", "OK", null, "Current text", "Your hint...") { toast("Current text: $it") }
     }
 
     private fun showAlert() {
