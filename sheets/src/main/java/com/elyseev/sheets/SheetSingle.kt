@@ -20,11 +20,9 @@ internal class SheetSingle @JvmOverloads constructor(context: Context, val attrs
     var title: String = ""
         set(value) {
             if (value.isEmpty()) {
-                sheetTitle.hide()
-                sheetAction.hide()
+                titleGroup.hide()
             } else {
-                sheetTitle.show()
-                sheetAction.show()
+                titleGroup.show()
             }
             sheetTitle.text = value
             field = value

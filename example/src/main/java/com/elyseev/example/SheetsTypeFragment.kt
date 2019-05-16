@@ -100,7 +100,7 @@ class SheetsTypeFragment : Fragment() {
         val items = (0..50).map { SheetItem(it, null, "Single $it") }
         items[2].isSelected = true
 
-//        ctx.showSheetSingle("Single list", items) { toast(items[it].title) }
+        ctx.showSheetSingle("dsfsfgsfd", titleCancel = "", items =  items) { toast(items[it].title) }
     }
 
     private fun showSingleWithIconList() {
