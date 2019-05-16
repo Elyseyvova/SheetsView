@@ -15,11 +15,17 @@ import com.elyseev.sheets.util.show
 import kotlinx.android.synthetic.main.sheet_items.view.*
 
 internal class SheetSingle @JvmOverloads constructor(context: Context, val attrs: AttributeSet? = null, defStyleAttr: Int = 0) :
-    LinearLayout(context, attrs, defStyleAttr) {
+        LinearLayout(context, attrs, defStyleAttr) {
 
     var title: String = ""
         set(value) {
-            if (value.isEmpty()) sheetTitle.hide() else sheetTitle.show()
+            if (value.isEmpty()) {
+                sheetTitle.hide()
+                sheetAction.hide()
+            } else {
+                sheetTitle.show()
+                sheetAction.show()
+            }
             sheetTitle.text = value
             field = value
         }
