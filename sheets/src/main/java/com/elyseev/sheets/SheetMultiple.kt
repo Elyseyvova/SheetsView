@@ -1,6 +1,7 @@
 package com.elyseev.sheets
 
 import android.content.Context
+import android.graphics.Color
 import android.util.AttributeSet
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,11 +17,11 @@ internal class SheetMultiple @JvmOverloads constructor(context: Context, val att
     LinearLayout(context, attrs, defStyleAttr) {
 
     var title: String = ""
-        set(value) {
-            field = value
+    set(value) {
+        field = value
 //            sheetTitle.showed(value.isNotEmpty())
-            sheetTitle.text = value
-        }
+        sheetTitle.text = value
+    }
 
     var items: List<SheetItem> = emptyList()
         set(value) {
@@ -28,7 +29,7 @@ internal class SheetMultiple @JvmOverloads constructor(context: Context, val att
 
             sheetAction.showed(items.size > 5)
 
-            SheetAdapter(SheetAdapter.SheetType.MULTIPLE).apply {
+            SheetAdapter(SheetAdapter.SheetType.MULTIPLE, color).apply {
                 list.adapter = this
                 list.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
                 sheetItems = items
@@ -37,6 +38,9 @@ internal class SheetMultiple @JvmOverloads constructor(context: Context, val att
                 }
             }
         }
+
+    var color: Int = Color.RED
+
 
     private var onClickOkListener: (List<Any>) -> Unit = {}
 

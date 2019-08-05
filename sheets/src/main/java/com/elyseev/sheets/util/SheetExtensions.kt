@@ -35,12 +35,14 @@ fun Context.showSheetSingle(
         title: String,
         titleCancel: String = "CANCEL",
         items: List<SheetItem>,
+        checkColor: Int,
         isCancelable: Boolean = true,
         listenerSelectable: (Int) -> Unit
 ) {
     val dialog = SheetsDialog(this)
 
     val sheet = SheetSingle(this)
+    sheet.color = checkColor
     sheet.title = title
     sheet.items = items
     sheet.onSelectedItem { listenerSelectable.invoke(it); dialog.dismiss() }
@@ -55,11 +57,13 @@ fun Context.showSheetMultiple(
         title: String,
         titleOk: String = "OK",
         items: List<SheetItem>,
+        checkColor: Int,
         listenerSelectable: (List<SheetItem>) -> Unit
 ) {
     val dialog = SheetsDialog(this)
 
     val sheet = SheetMultiple(this)
+    sheet.color = checkColor
     sheet.title = title
     sheet.items = items
     sheet.buttonOk(titleOk) { listenerSelectable.invoke(items); dialog.dismiss() }

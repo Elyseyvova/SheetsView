@@ -100,7 +100,9 @@ class SheetsTypeFragment : Fragment() {
         val items = (0..50).map { SheetItem(it, null, "Single $it") }
         items[2].isSelected = true
 
-        ctx.showSheetSingle("dsfsfgsfd", titleCancel = "", items =  items) { toast(items[it].title) }
+        val color = ctx.resources.getColor(R.color.colorAccent)
+
+        ctx.showSheetSingle("dsfsfgsfd", titleCancel = "", items =  items, checkColor = color) { toast(items[it].title) }
     }
 
     private fun showSingleWithIconList() {
@@ -117,7 +119,9 @@ class SheetsTypeFragment : Fragment() {
         items[7].isSelected = true
         items[8].isSelected = true
 
-        ctx.showSheetMultiple("Multiple list", "OK", items) { toast("Selected ${it.filter { it.isSelected }.size} items") }
+        val color = ctx.resources.getColor(R.color.colorAccent)
+
+        ctx.showSheetMultiple("Multiple list", "OK", items, color) { toast("Selected ${it.filter { it.isSelected }.size} items") }
     }
 
     private fun showMultipleWithIconList() {
